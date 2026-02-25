@@ -62,7 +62,7 @@ pipeline {
             steps {
                 echo "Running Docker Container on Jenkins EC2 instance"
                 sh """
-                    docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
+                    docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:80 ${DOCKER_IMAGE}
                 """
             }
         }

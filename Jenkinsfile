@@ -59,10 +59,6 @@ pipeline {
 
         stage("RUN Docker Compose")
         {
-            steps {
-                echo "Start the Containers using docker-compose"
-                sh "docker-compose up -d"
-            }
         post {
             success {
                 echo "Docker Containers are started sucessfully"

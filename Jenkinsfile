@@ -56,17 +56,5 @@ pipeline {
             }
             }
         }
-
-        stage("RUN Docker Compose")
-        {
-        post {
-            success {
-                echo "Docker Containers are started sucessfully"
-            }
-            failure {
-                echo "Docker Containers are Failed"
-            }
-        }
-        }
     }
 }

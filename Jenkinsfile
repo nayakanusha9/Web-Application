@@ -12,6 +12,8 @@ pipeline {
         DOCKER_IMAGE = "turbo-grocery-app:${VERSION}"
         DOCKER_REGISTRY = "docker.io"
         DOCKER_REGISTRY_CREDENCIALS = "docker_creds"
+        CONTAINER_NAME = "turbo-grocery-container"
+        APP_PORT = "5000"
     }
 
     stages {
@@ -56,5 +58,23 @@ pipeline {
             }
             }
         }
+        stage('Run Container') {
+            steps {
+                echo "Running Docker Container on Jenkins EC2 instance"
+                sh """
+                    docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo " Build & Deployment Successful! Access the app at: http://<EC2-PUBLIC-IP>:${APP_PORT}"
+        }
+        failure {
+            echo " Build Failed. Check logs."
+        }
+    }
     }
 }

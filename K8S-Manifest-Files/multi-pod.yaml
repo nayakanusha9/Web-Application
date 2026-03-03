@@ -8,7 +8,7 @@ spec:
        image: anushanayak091/turbo-grocery-app:V4.3.0
        ports:
         -  containerPort: 80
-    -  name: flipkart-app
-       image: anushanayak091/flipkart-app-web:v1.0.0
+    -  name: sample-cont
+       image: anushanayak091/anusha-priya:1.0.0
        ports:
         -  containerPort: 3015

@@ -8,7 +8,7 @@ spec:
        image: anushanayak091/turbo-grocery-app:V4.3.0
        ports:
         -  containerPort: 80
-    -  name: sample-cont
-       image: anushanayak091/anusha-priya:1.0.0
+    -  name: java-app
+       image: anushanayak091/java-web-app:v1.0.0
        ports:
-        -  containerPort: 3015
+        -  containerPort: 8080

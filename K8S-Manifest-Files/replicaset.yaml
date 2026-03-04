@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: flower-app-rs
+  name: grocery-app-rs
   labels:
     app: web
 spec: #Defines the behaviour of the replicaset
   replicas: 3
   selector:
     matchLables:
-      web: flower
+      web: grocery
   template:
     metadata:
       labels: 
-        web: flower
+        web: grocery
     spec: #Defines the behaviour of the Pod
       containers: 
-        -  image: <image-name from hub>
+        -  image: anushanayak091/turbo-grocery-app:V4.3.0
            name: sre-web
            ports:
-            -  containerPort: 3015
+            -  containerPort: 80

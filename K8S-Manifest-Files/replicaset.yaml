@@ -1,21 +1,21 @@
-apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: grocery-app-rs
+apiVersion: apps/v1 
+kind: ReplicaSet 
+metadata: 
+  name: grocery-app-rs 
   labels:
     app: web
-spec: #Defines the behaviour of the replicaset
-  replicas: 3
+spec: # Defines the Behaviour of the replicaset 
+  replicas: 3 
   selector:
-    matchLables:
+    matchLabels:
       web: grocery
   template:
     metadata:
-      labels: 
-        web: grocery
-    spec: #Defines the behaviour of the Pod
-      containers: 
+      labels:
+        web: grocery 
+    spec: # Defines the Behaviour of the Pod 
+      containers:
         - image: anushanayak091/turbo-grocery-app:V4.3.0
-          name: sre-web
+          name: turbo-cont
           ports:
-            -  containerPort: 80
+            - containerPort: 80

@@ -15,7 +15,7 @@ spec: #Defines the behaviour of the replicaset
         web: grocery
     spec: #Defines the behaviour of the Pod
       containers: 
-        -  image: anushanayak091/turbo-grocery-app:V4.3.0
-           name: sre-web
-           ports:
+        - image: anushanayak091/turbo-grocery-app:V4.3.0
+          name: sre-web
+          ports:
             -  containerPort: 80

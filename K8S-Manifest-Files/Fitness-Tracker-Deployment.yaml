@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fitness-tracker-deployment
-  lables:
+  labels:
     first: app
 spec:
   replicas: 3

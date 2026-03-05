@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fitness-tracker-deployment
+  lables:
+    first: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: fitness-cont
+          image: anushanayak091/fitness-tracker:v1.0.0
+          ports:
+            - containerPort: 5000

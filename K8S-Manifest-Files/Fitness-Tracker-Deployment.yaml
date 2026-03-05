@@ -15,7 +15,7 @@ spec:
         app: web
     spec:
       containers:
-        - name: fitness-cont
-          image: anushanayak091/fitness-tracker:v1.0.0
-          ports:
-            - containerPort: 5000
+        -  name: fitness-cont
+           image: anushanayak091/fitness-tracker:v1.0.0
+           ports:
+             -  containerPort: 5000
